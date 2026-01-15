@@ -1,0 +1,94 @@
+class SachinResume {
+
+    // Personal Details
+    String name = "Sachin J";
+    String email = "sachinjagadish2006@gmail.com";
+    String phone = "+91 6374477656";
+    String linkedIn = "linkedin.com/in/sachin-jagadish-raja-891613334";
+
+    // Education Structure
+    class Education {
+        String institution;
+        String course;
+        String year;
+        String score;
+
+        Education(String institution, String course, String year, String score) {
+            this.institution = institution;
+            this.course = course;
+            this.year = year;
+            this.score = score;
+        }
+
+        void display() {
+            System.out.println(institution + " | " + course + " | " + year + " | " + score);
+        }
+    }
+
+    // Skills Section
+    void displaySkills() {
+        System.out.println("\n--- SKILLS ---");
+        System.out.println("Web Development: HTML, CSS, JavaScript, Responsive Design");
+        System.out.println("Programming: Python, C, Java");
+        System.out.println("Tools: Git, Google Colab, Excel, PowerPoint");
+        System.out.println("Digital Skills: Meta Ads, Digital Marketing, Cybersecurity Basics, PowerBI");
+    }
+
+    // Projects Section
+    void displayProjects() {
+        System.out.println("\n--- PROJECTS ---");
+        System.out.println("1. E-Commerce Platform (HTML, CSS, JS)");
+        System.out.println("   • Waste segregation hackathon project + online grocery shopping");
+        System.out.println("2. Altius Sports Academy Website (React, FastAPI, PostgreSQL)");
+        System.out.println("   • Built complete frontend + backend with database");
+        System.out.println("3. Exam Cell Invigilation System (Java OOP)");
+        System.out.println("   • Automated scheduling and monitoring");
+    }
+
+    // Internships Section
+    void displayInternships() {
+        System.out.println("\n--- INTERNSHIPS ---");
+        System.out.println("1. Novanectar Services Pvt. Ltd — Data Science Intern");
+        System.out.println("   • Data preprocessing, analysis, visualization, model building");
+        System.out.println("2. Altius Sports Academy — Web Development Intern");
+        System.out.println("   • Official website built using React + FastAPI + PostgreSQL");
+        System.out.println("3. 1M1B Green Internship — AI & Data Analysis");
+        System.out.println("4. Cisco — AIML, Data Structures, Web Development Training");
+        System.out.println("5. 1M1B + AICTE — AI & Sustainability projects");
+    }
+
+    // Display Resume
+    void displayResume() {
+        System.out.println("========================================");
+        System.out.println("           RESUME - SACHIN J");
+        System.out.println("========================================");
+        System.out.println("Email: " + email);
+        System.out.println("Phone: " + phone);
+        System.out.println("LinkedIn: " + linkedIn);
+
+        System.out.println("\n--- ABOUT ME ---");
+        System.out.println("Detail-oriented and creative 2nd-year B.E CSE student.");
+        System.out.println("Passionate about frontend development and modern web technologies.");
+        System.out.println("Skilled in responsive UI, clean designs, and Java OOP.");
+
+        System.out.println("\n--- EDUCATION ---");
+        Education sslc = new Education("Union Christian Hr. Sec. School, Chennai", "SSLC", "2021–22", "80%");
+        Education hsc = new Education("Union Christian Hr. Sec. School, Chennai", "HSC", "2023–24", "83%");
+        Education degree = new Education("Easwari Engineering College (SRM Group)", "B.E CSE", "2024–2028", "CGPA: 8.5");
+
+        sslc.display();
+        hsc.display();
+        degree.display();
+
+        displaySkills();
+        displayProjects();
+        displayInternships();
+
+        System.out.println("\n© Sachin J — Aspiring Software Engineer");
+    }
+
+    public static void main(String[] args) {
+        SachinResume resume = new SachinResume();
+        resume.displayResume();
+    }
+}

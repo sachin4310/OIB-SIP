@@ -1,0 +1,36 @@
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.container {
+  background: white;
+  width: 350px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input, select, button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  background: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#result {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}

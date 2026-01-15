@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .converter {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #667eea;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5a67d8;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="converter">
+    <h2>Temperature Converter</h2>
+
+    <input type="number" id="tempInput" placeholder="Enter temperature">
+
+    <select id="fromUnit">
+      <option value="celsius">Celsius (°C)</option>
+      <option value="fahrenheit">Fahrenheit (°F)</option>
+      <option value="kelvin">Kelvin (K)</option>
+    </select>
+
+    <select id="toUnit">
+      <option value="fahrenheit">Fahrenheit (°F)</option>
+      <option value="celsius">Celsius (°C)</option>
+      <option value="kelvin">Kelvin (K)</option>
+    </select>
+
+    <button onclick="convertTemp()">Convert</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function convertTemp() {
+      const temp = parseFloat(document.getElementById("tempInput").value);
+      const from = document.getElementById("fromUnit").value;
+      const to = document.getElementById("toUnit").value;
+      let result;
+
+      if (isNaN(temp)) {
+        document.getElementById("result").innerText = "Please enter a value";
+        return;
+      }
+
+      if (from === to) {
+        result = temp;
+      } else if (from === "celsius" && to === "fahrenheit") {
+        result = (temp * 9/5) + 32;
+      } else if (from === "celsius" && to === "kelvin") {
+        result = temp + 273.15;
+      } else if (from === "fahrenheit" && to === "celsius") {
+        result = (temp - 32) * 5/9;
+      } else if (from === "fahrenheit" && to === "kelvin") {
+        result = (temp - 32) * 5/9 + 273.15;
+      } else if (from === "kelvin" && to === "celsius") {
+        result = temp - 273.15;
+      } else if (from === "kelvin" && to === "fahrenheit") {
+        result = (temp - 273.15) * 9/5 + 32;
+      }
+
+      document.getElementById("result").innerText =
+        "Result: " + result.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
